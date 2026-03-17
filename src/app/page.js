@@ -55,6 +55,13 @@ export default function Home() {
             linkCodigo="https://github.com/MatiasCantoni/TP-Final-PW2"
           />
 
+          <TarjetaProyecto 
+            titulo="Gimnasio" 
+            descripcion="landing page de un gimnasio" 
+            tecnologias="Next.js / React / Tailwind" 
+            imagen="/proyectos/gym.png"
+            linkDemo="/gym"
+          />
         </div>
       </section>
       {/* SECCIÓN SOBRE MÍ */}
