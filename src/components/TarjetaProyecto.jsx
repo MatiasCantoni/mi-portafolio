@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 
 import { useState } from "react";
 
@@ -17,7 +18,11 @@ export default function TarjetaProyecto({
   return (
     <>
       {/* --- TARJETA NORMAL --- */}
-      <div className="flex flex-col bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300">
+      <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true }} className="flex flex-col bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300">
         
         {/* Zona Visual (Ahora es clickeable) */}
         <div 
@@ -73,7 +78,7 @@ export default function TarjetaProyecto({
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* --- MODAL DE PANTALLA COMPLETA --- */}
       {/* Si "ampliado" es true, dibujamos esta ventana gigante encima de todo */}

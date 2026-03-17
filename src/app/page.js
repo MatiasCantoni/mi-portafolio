@@ -1,4 +1,7 @@
+"use client";
 import TarjetaProyecto from "@/components/TarjetaProyecto";
+import { motion } from "framer-motion";
+import Contacto from '../components/Contacto';
 
 export default function Home() {
   return (
@@ -14,14 +17,18 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <main className="max-w-4xl mx-auto mt-20 px-6 text-center">
+      <motion.main 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }} className="max-w-4xl mx-auto mt-20 px-6 text-center">
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
           Hola, soy <span className="text-blue-600">Matias Cantoni</span>
         </h1>
         <p className="text-xl text-slate-500 mb-10">
           Desarrollador Web enfocado en construir aplicaciones rápidas y funcionales.
         </p>
-      </main>
+      </motion.main>
 
       {/* SECCIÓN DE PROYECTOS */}
       <section id="proyectos" className="max-w-4xl mx-auto mt-24 px-6">
@@ -33,9 +40,9 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           <TarjetaProyecto 
-            titulo="Che Oficios" 
-            descripcion="Plataforma web desarrollada para conectar profesionales de oficios con clientes que requieren servicios específicos." 
-            tecnologias="Laravel / PHP" 
+            titulo="Che Oficios - En Proceso"
+            descripcion="Start-UP de una plataforma web desarrollada para conectar profesionales de oficios con clientes que requieren servicios específicos. - Lanzamiento proximo en 2 semanas." 
+            tecnologias="Laravel / PHP / Tailwind / MySQL" 
           />
 
           <TarjetaProyecto 
@@ -82,7 +89,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-
+      <Contacto />
     </div>
   );
 }
